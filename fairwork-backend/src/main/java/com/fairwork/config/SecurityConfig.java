@@ -28,31 +28,28 @@ public class SecurityConfig {
 
         return http.build();
     }
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
+   @Bean
+public CorsConfigurationSource corsConfigurationSource() {
 
-        CorsConfiguration configuration = new CorsConfiguration();
+    CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(
-    List.of(
-        "http://localhost:5173",
-        "https://fair-work-xi.vercel.app"
-    )
-);
+    configuration.setAllowedOrigins(List.of(
+        "https://fair-work-xi.vercel.app",
+        "http://localhost:5173"
+    ));
 
-        configuration.setAllowedMethods(
-            List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")
-        );
+    configuration.setAllowedMethods(
+        List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")
+    );
 
-        configuration.setAllowedHeaders(
-            List.of("*")
-        );
+    configuration.setAllowedHeaders(List.of("*"));
+    configuration.setAllowCredentials(false);
 
-        UrlBasedCorsConfigurationSource source =
-            new UrlBasedCorsConfigurationSource();
+    UrlBasedCorsConfigurationSource source =
+        new UrlBasedCorsConfigurationSource();
 
-        source.registerCorsConfiguration("/**", configuration);
+    source.registerCorsConfiguration("/**", configuration);
 
-        return source;
-    }
+    return source;
+}
 }
