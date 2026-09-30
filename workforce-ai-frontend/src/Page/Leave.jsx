@@ -23,7 +23,7 @@ const todayDate = new Date().toISOString().split("T")[0];
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-  fetch("http://localhost:8080/api/employees")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -37,7 +37,7 @@ const todayDate = new Date().toISOString().split("T")[0];
 }, []);
 
     useEffect(() => {
-  fetch("http://localhost:8080/api/leaves")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/leaves")
     .then((response) => response.json())
     .then((data) => {
   setLeaveRequests(
@@ -88,7 +88,7 @@ useEffect(() => {
     status: newStatus,
   };
 
-  fetch(`http://localhost:8080/api/leaves/${id}`, {
+  fetch(`https://fairwork-2h17s2be.b4a.run/api/leaves/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const findAffectedSchedules = async (leave) => {
     setReplacementLoading(true);
 
     const response = await fetch(
-      "http://localhost:8080/api/ai-schedules"
+      "https://fairwork-2h17s2be.b4a.run/api/ai-schedules"
     );
 
     if (!response.ok) {
@@ -159,7 +159,7 @@ const findAffectedSchedules = async (leave) => {
     for (const schedule of affected) {
       try {
         const recommendResponse = await fetch(
-          `http://localhost:8080/api/ai/recommend-replacement?scheduleId=${schedule.id}`,
+          `https://fairwork-2h17s2be.b4a.run/api/ai/recommend-replacement?scheduleId=${schedule.id}`,
           {
             method: "POST",
           }
@@ -231,7 +231,7 @@ const handleConfirmReplacement = async (
 
   try {
     const response = await fetch(
-      `http://localhost:8080/api/ai/confirm-replacement?scheduleId=${recommendation.scheduleId}&replacementEmployeeId=${recommendation.replacementEmployeeId}`,
+      `https://fairwork-2h17s2be.b4a.run/api/ai/confirm-replacement?scheduleId=${recommendation.scheduleId}&replacementEmployeeId=${recommendation.replacementEmployeeId}`,
       {
         method: "POST",
       }
@@ -287,7 +287,7 @@ const handleCancelLeave = (id) => {
     return;
   }
 
-  fetch(`http://localhost:8080/api/leaves/${id}`, {
+  fetch(`https://fairwork-2h17s2be.b4a.run/api/leaves/${id}`, {
     method: "DELETE",
   })
     .then((response) => {
@@ -526,7 +526,7 @@ if (usedLeaveDays + days > leaveLimit) {
     status: "Pending",
   };
 
-  fetch("http://localhost:8080/api/leaves", {
+  fetch("https://fairwork-2h17s2be.b4a.run/api/leaves", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

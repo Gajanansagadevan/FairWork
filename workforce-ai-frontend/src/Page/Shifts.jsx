@@ -73,7 +73,7 @@ const getShiftTimeDisplay = (shift) => {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-  fetch("http://localhost:8080/api/employees")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -89,7 +89,7 @@ const [assignedEmployees, setAssignedEmployees] = useState({});
   const [shifts, setShifts] = useState([]);
 
   useEffect(() => {
-  fetch("http://localhost:8080/api/shifts")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/shifts")
     .then((response) => response.json())
     .then((data) => {
       setShifts(data);
@@ -100,7 +100,7 @@ const [assignedEmployees, setAssignedEmployees] = useState({});
 }, []);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/shift-assignments")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/shift-assignments")
     .then((response) => response.json())
     .then((data) => {
       const groupedAssignments = {};
@@ -158,7 +158,7 @@ const handleRemoveEmployee = (employeeId) => {
   }
 
   fetch(
-    `http://localhost:8080/api/shift-assignments/shift/${viewShift.id}/employee/${employeeId}`,
+    `https://fairwork-2h17s2be.b4a.run/api/shift-assignments/shift/${viewShift.id}/employee/${employeeId}`,
     {
       method: "DELETE",
     }
@@ -296,7 +296,7 @@ const handleSubmit = (e) => {
     status: "Active",
   };
 
-  fetch("http://localhost:8080/api/shifts", {
+  fetch("https://fairwork-2h17s2be.b4a.run/api/shifts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -891,7 +891,7 @@ const handleSubmit = (e) => {
 
 Promise.all(
   employeesToAssign.map((employee) =>
-    fetch("http://localhost:8080/api/shift-assignments", {
+    fetch("https://fairwork-2h17s2be.b4a.run/api/shift-assignments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

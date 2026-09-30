@@ -20,7 +20,7 @@ function Dashboard() {
   const [employees, setEmployees] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/employees")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -38,7 +38,7 @@ const totalEmployees = employees.length;
 const [attendanceRecords, setAttendanceRecords] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/attendance")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/attendance")
     .then((response) => response.json())
     .then((data) => {
       setAttendanceRecords(data);
@@ -54,7 +54,7 @@ useEffect(() => {
 const [payrollRecords, setPayrollRecords] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/payroll")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/payroll")
     .then((response) => response.json())
     .then((data) => {
       setPayrollRecords(data);
@@ -105,7 +105,7 @@ const totalPayroll =
   const [aiSchedules, setAiSchedules] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/ai-schedules")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/ai-schedules")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch AI schedules");
@@ -177,7 +177,7 @@ const upcomingWorkforceMessage =
 const [leaveRequests, setLeaveRequests] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/leaves")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/leaves")
     .then((response) => response.json())
     .then((data) => {
       setLeaveRequests(data);

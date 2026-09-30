@@ -13,7 +13,7 @@ function Reports() {
   const [leaveRequests, setLeaveRequests] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/attendance")
+    fetch("https://fairwork-2h17s2be.b4a.run/api/attendance")
       .then((response) => response.json())
       .then((data) => setAttendanceRecords(data))
       .catch((error) =>
@@ -25,7 +25,7 @@ function Reports() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/payroll")
+    fetch("https://fairwork-2h17s2be.b4a.run/api/payroll")
       .then((response) => response.json())
       .then((data) => setPayrollRecords(data))
       .catch((error) =>
@@ -37,7 +37,7 @@ function Reports() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/leaves")
+    fetch("https://fairwork-2h17s2be.b4a.run/api/leaves")
       .then((response) => response.json())
       .then((data) => {
         setLeaveRequests(

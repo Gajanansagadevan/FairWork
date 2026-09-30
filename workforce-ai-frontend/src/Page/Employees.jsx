@@ -55,7 +55,7 @@ const [statusFilter, setStatusFilter] = useState("All Status");
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-  fetch("http://localhost:8080/api/employees")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/employees")
     .then((response) => response.json())
     .then((data) => {
   setEmployees(data);
@@ -131,7 +131,7 @@ const filteredEmployees = employees.filter((employee) => {
   };
 
   fetch(
-    `http://localhost:8080/api/employees/${editingEmployee.id}`,
+    `https://fairwork-2h17s2be.b4a.run/api/employees/${editingEmployee.id}`,
     {
       method: "PUT",
       headers: {
@@ -176,7 +176,7 @@ const newEmployeeId = `EMP${String(
     status: formData.status,
   };
 
-  fetch("http://localhost:8080/api/employees", {
+  fetch("https://fairwork-2h17s2be.b4a.run/api/employees", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -211,7 +211,7 @@ const newEmployeeId = `EMP${String(
 
   if (confirmDelete) {
 
-    fetch(`http://localhost:8080/api/employees/${employeeId}`, {
+    fetch(`https://fairwork-2h17s2be.b4a.run/api/employees/${employeeId}`, {
       method: "DELETE",
     })
       .then((response) => {

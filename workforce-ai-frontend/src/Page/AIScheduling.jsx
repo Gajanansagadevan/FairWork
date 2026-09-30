@@ -49,7 +49,7 @@ const loadSavedSchedules = async () => {
 
   try {
     const response = await fetch(
-      "http://localhost:8080/api/ai-schedules"
+      "https://fairwork-2h17s2be.b4a.run/api/ai-schedules"
     );
 
     if (!response.ok) {
@@ -104,7 +104,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/ai/generate-weekly-schedule",
+        "https://fairwork-2h17s2be.b4a.run/api/ai/generate-weekly-schedule",
         {
           method: "POST",
 
@@ -178,7 +178,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/ai-schedules/confirm-weekly",
+        "https://fairwork-2h17s2be.b4a.run/api/ai-schedules/confirm-weekly",
         {
           method: "POST",
 

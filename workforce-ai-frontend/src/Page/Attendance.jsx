@@ -22,7 +22,7 @@ const standardWorkingHours =
 const [employees, setEmployees] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/attendance")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/attendance")
     .then((response) => response.json())
     .then((data) => {
       setAttendanceRecords(
@@ -38,7 +38,7 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  fetch("http://localhost:8080/api/employees")
+  fetch("https://fairwork-2h17s2be.b4a.run/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -643,7 +643,7 @@ const updatedAttendance = {
   status: record.status,
 };
 
-fetch(`http://localhost:8080/api/attendance/${record.id}`, {
+fetch(`https://fairwork-2h17s2be.b4a.run/api/attendance/${record.id}`, {
   method: "PUT",
   headers: {
     "Content-Type": "application/json",
@@ -818,7 +818,7 @@ const attendanceStatus =
   status: attendanceStatus,
 };
 
-fetch("http://localhost:8080/api/attendance", {
+fetch("https://fairwork-2h17s2be.b4a.run/api/attendance", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
