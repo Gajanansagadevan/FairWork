@@ -90,7 +90,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-				<mainClass>com.fairwork.fairwork_backend.FairworkBackendApplication</mainClass>
+				<mainClass>com.fairwork.FairworkBackendApplication</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
