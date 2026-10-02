@@ -80,7 +80,7 @@ const selectedCycle = getCycleLabel();
     
 
     useEffect(() => {
-  fetch("https://fairwork-hfg5sscn.b4a.run/api/employees")
+  fetch("https://fairwork-mr3yo4on.b4a.run/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -91,7 +91,7 @@ const selectedCycle = getCycleLabel();
 }, []);
 
     useEffect(() => {
-  fetch("https://fairwork-hfg5sscn.b4a.run/api/payroll")
+  fetch("https://fairwork-mr3yo4on.b4a.run/api/payroll")
     .then((response) => response.json())
     .then((data) => {
       setPayrollRecords(data);
@@ -111,7 +111,7 @@ useEffect(() => {
 const [attendanceRecords, setAttendanceRecords] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-hfg5sscn.b4a.run/api/attendance")
+  fetch("https://fairwork-mr3yo4on.b4a.run/api/attendance")
     .then((response) => response.json())
     .then((data) => {
       setAttendanceRecords(data);
@@ -209,7 +209,7 @@ const handleMarkAsPaid = (id, month) => {
     status: "Paid",
   };
 
-  fetch(`https://fairwork-hfg5sscn.b4a.run/api/payroll/${id}`, {
+  fetch(`https://fairwork-mr3yo4on.b4a.run/api/payroll/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -323,7 +323,7 @@ const handleGeneratePayroll = async () => {
     // being harder to diagnose.
     for (const employee of employeesWithoutPayroll) {
       const response = await fetch(
-        "https://fairwork-hfg5sscn.b4a.run/api/payroll/generate-four-week",
+        "https://fairwork-mr3yo4on.b4a.run/api/payroll/generate-four-week",
         {
           method: "POST",
           headers: {
