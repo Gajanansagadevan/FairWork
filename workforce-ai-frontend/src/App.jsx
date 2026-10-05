@@ -20,7 +20,7 @@ function Dashboard() {
   const [employees, setEmployees] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/employees")
+  fetch("https://fairwork-usqufz.cranl.net/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -38,7 +38,7 @@ const totalEmployees = employees.length;
 const [attendanceRecords, setAttendanceRecords] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/attendance")
+  fetch("https://fairwork-usqufz.cranl.net/api/attendance")
     .then((response) => response.json())
     .then((data) => {
       setAttendanceRecords(data);
@@ -54,7 +54,7 @@ useEffect(() => {
 const [payrollRecords, setPayrollRecords] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/payroll")
+  fetch("https://fairwork-usqufz.cranl.net/api/payroll")
     .then((response) => response.json())
     .then((data) => {
       setPayrollRecords(data);
@@ -105,7 +105,7 @@ const totalPayroll =
   const [aiSchedules, setAiSchedules] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/ai-schedules")
+  fetch("https://fairwork-usqufz.cranl.net/api/ai-schedules")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Failed to fetch AI schedules");
@@ -177,7 +177,7 @@ const upcomingWorkforceMessage =
 const [leaveRequests, setLeaveRequests] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/leaves")
+  fetch("https://fairwork-usqufz.cranl.net/api/leaves")
     .then((response) => response.json())
     .then((data) => {
       setLeaveRequests(data);

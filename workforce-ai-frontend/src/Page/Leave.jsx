@@ -23,7 +23,7 @@ const todayDate = new Date().toISOString().split("T")[0];
     const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/employees")
+  fetch("https://fairwork-usqufz.cranl.net/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -37,7 +37,7 @@ const todayDate = new Date().toISOString().split("T")[0];
 }, []);
 
     useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/leaves")
+  fetch("https://fairwork-usqufz.cranl.net/api/leaves")
     .then((response) => response.json())
     .then((data) => {
   setLeaveRequests(
@@ -88,7 +88,7 @@ useEffect(() => {
     status: newStatus,
   };
 
-  fetch(`https://fairwork-mr3yo4on.b4a.run/api/leaves/${id}`, {
+  fetch(`https://fairwork-usqufz.cranl.net/api/leaves/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const findAffectedSchedules = async (leave) => {
     setReplacementLoading(true);
 
     const response = await fetch(
-      "https://fairwork-mr3yo4on.b4a.run/api/ai-schedules"
+      "https://fairwork-usqufz.cranl.net/api/ai-schedules"
     );
 
     if (!response.ok) {
@@ -159,7 +159,7 @@ const findAffectedSchedules = async (leave) => {
     for (const schedule of affected) {
       try {
         const recommendResponse = await fetch(
-          `https://fairwork-mr3yo4on.b4a.run/api/ai/recommend-replacement?scheduleId=${schedule.id}`,
+          `https://fairwork-usqufz.cranl.net/api/ai/recommend-replacement?scheduleId=${schedule.id}`,
           {
             method: "POST",
           }
@@ -231,7 +231,7 @@ const handleConfirmReplacement = async (
 
   try {
     const response = await fetch(
-      `https://fairwork-mr3yo4on.b4a.run/api/ai/confirm-replacement?scheduleId=${recommendation.scheduleId}&replacementEmployeeId=${recommendation.replacementEmployeeId}`,
+      `https://fairwork-usqufz.cranl.net/api/ai/confirm-replacement?scheduleId=${recommendation.scheduleId}&replacementEmployeeId=${recommendation.replacementEmployeeId}`,
       {
         method: "POST",
       }
@@ -287,7 +287,7 @@ const handleCancelLeave = (id) => {
     return;
   }
 
-  fetch(`https://fairwork-mr3yo4on.b4a.run/api/leaves/${id}`, {
+  fetch(`https://fairwork-usqufz.cranl.net/api/leaves/${id}`, {
     method: "DELETE",
   })
     .then((response) => {
@@ -526,7 +526,7 @@ if (usedLeaveDays + days > leaveLimit) {
     status: "Pending",
   };
 
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/leaves", {
+  fetch("https://fairwork-usqufz.cranl.net/api/leaves", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

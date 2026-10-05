@@ -49,7 +49,7 @@ const loadSavedSchedules = async () => {
 
   try {
     const response = await fetch(
-      "https://fairwork-mr3yo4on.b4a.run/api/ai-schedules"
+      "https://fairwork-usqufz.cranl.net/api/ai-schedules"
     );
 
     if (!response.ok) {
@@ -104,7 +104,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        "https://fairwork-mr3yo4on.b4a.run/api/ai/generate-weekly-schedule",
+        "https://fairwork-usqufz.cranl.net/api/ai/generate-weekly-schedule",
         {
           method: "POST",
 
@@ -178,7 +178,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        "https://fairwork-mr3yo4on.b4a.run/api/ai-schedules/confirm-weekly",
+        "https://fairwork-usqufz.cranl.net/api/ai-schedules/confirm-weekly",
         {
           method: "POST",
 

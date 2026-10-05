@@ -55,7 +55,7 @@ const [statusFilter, setStatusFilter] = useState("All Status");
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/employees")
+  fetch("https://fairwork-usqufz.cranl.net/api/employees")
     .then((response) => response.json())
     .then((data) => {
   setEmployees(data);
@@ -131,7 +131,7 @@ const filteredEmployees = employees.filter((employee) => {
   };
 
   fetch(
-    `https://fairwork-mr3yo4on.b4a.run/api/employees/${editingEmployee.id}`,
+    `https://fairwork-usqufz.cranl.net/api/employees/${editingEmployee.id}`,
     {
       method: "PUT",
       headers: {
@@ -176,7 +176,7 @@ const newEmployeeId = `EMP${String(
     status: formData.status,
   };
 
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/employees", {
+  fetch("https://fairwork-usqufz.cranl.net/api/employees", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -211,7 +211,7 @@ const newEmployeeId = `EMP${String(
 
   if (confirmDelete) {
 
-    fetch(`https://fairwork-mr3yo4on.b4a.run/api/employees/${employeeId}`, {
+    fetch(`https://fairwork-usqufz.cranl.net/api/employees/${employeeId}`, {
       method: "DELETE",
     })
       .then((response) => {

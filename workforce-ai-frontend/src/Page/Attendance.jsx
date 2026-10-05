@@ -22,7 +22,7 @@ const standardWorkingHours =
 const [employees, setEmployees] = useState([]);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/attendance")
+  fetch("https://fairwork-usqufz.cranl.net/api/attendance")
     .then((response) => response.json())
     .then((data) => {
       setAttendanceRecords(
@@ -38,7 +38,7 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  fetch("https://fairwork-mr3yo4on.b4a.run/api/employees")
+  fetch("https://fairwork-usqufz.cranl.net/api/employees")
     .then((response) => response.json())
     .then((data) => {
       setEmployees(data);
@@ -643,7 +643,7 @@ const updatedAttendance = {
   status: record.status,
 };
 
-fetch(`https://fairwork-mr3yo4on.b4a.run/api/attendance/${record.id}`, {
+fetch(`https://fairwork-usqufz.cranl.net/api/attendance/${record.id}`, {
   method: "PUT",
   headers: {
     "Content-Type": "application/json",
@@ -818,7 +818,7 @@ const attendanceStatus =
   status: attendanceStatus,
 };
 
-fetch("https://fairwork-mr3yo4on.b4a.run/api/attendance", {
+fetch("https://fairwork-usqufz.cranl.net/api/attendance", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
